@@ -3,16 +3,26 @@
 namespace Drupal\notification_bar\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
+
 use Drupal\Core\Ajax\RedirectCommand;
+
 use Drupal\Core\Url;
+
 use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Drupal\Core\Form\FormBase;
+
 use Drupal\Core\Form\FormStateInterface;
+
+
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Ajax\HtmlCommand;
+
 use Drupal\Core\Ajax\ReplaceCommand;
+
+
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Component\Render\FormattableMarkup;
+
 
 /**
  * SendToDestinationsForm class.
@@ -35,12 +45,14 @@ class NotificationForm extends ConfigFormBase {
     $config = $this->config('notification_bar.admin_config');
 
     //build form
+
     $form['notification_message'] = array(
       '#type' => 'textarea',
       '#title' => t('Notification message text'),
       '#default_value' => $config->get('notification_message'),
       '#description' => t('Enter a notification message for the users'),
     );
+
     $form['notification_message_allowed'] = array(
       '#type' => 'checkbox',
       '#title' => t('Enable notification message'),
@@ -48,11 +60,14 @@ class NotificationForm extends ConfigFormBase {
       '#default_value' => $config->get('notification_message_allowed'),
     );
 
+
+
     $form['bbs_bgcolor'] = array(
       '#type' => 'color',
       '#title' => t('Background Color'),
       '#default_value' => $config->get('bbs_bgcolor'),
     );
+
 
     $form['bbs_notification_font_color'] = array(
       '#type' => 'color',
