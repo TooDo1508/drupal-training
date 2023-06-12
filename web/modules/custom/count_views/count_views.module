@@ -1,0 +1,93 @@
+<?php
+
+function count_views_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode): void
+{
+    $node = $entity;
+    $nid = $node->get('nid')->value;
+
+    $user = \Drupal::currentUser();
+
+    $user2 = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $uid = $user2->get('uid')->value;
+//    dump($uid);
+    $name = $user2->get('name')->value;
+//    dump($name);
+
+    $time_value = \Drupal::time()->getCurrentTime();
+    $timeFormat = \Drupal::service('date.formatter')->format($time_value, 'custom', "Y.m.d H:i");
+
+    $query = \Drupal::database()->insert('history_process');
+    $query->fields([
+        'nid',
+        'uid',
+        'name',
+        'current_date'
+    ]);
+    $query->values([$nid,$uid,$name,$timeFormat]);
+    $query->execute();
+    $items = [
+        'total_views' => 1234,
+        'total_views_day' => 0,
+        'name' => '',
+        'time_last_process' => ''
+    ];
+
+    $build['thong_ke'] = [
+        '#theme' => 'count_views_2',
+        '#total_views2' => 4323,
+        '#total_views_day2' => 0232,
+        '#name2' => 1230,
+        '#time_last_process2' => 20,
+    ];
+
+}
+
+function count_views_theme(){
+    return array(
+        'count_views' => array(
+            'variables' => [
+                'total_views' => 0,
+                'total_views_day' => 0,
+                'name' => 'No one visit here!',
+                'time_last_process' => '00-00-00 00:00'
+            ],
+        )
+    );
+}
+function count_views_2_theme(){
+    return array(
+        'count_views_2' => array(
+            'variables' => [
+                'total_views2' => 0,
+                'total_views_day2' => 0,
+                'name2' => '',
+                'time_last_process2' => ''
+            ],
+        )
+    );
+};
+
+function count_views_preprocess_node(&$variables){
+    $node = $variables['content'];
+    $test_node = [
+        '#theme' => 'count_views_2',
+        '#total_views2' => 4323,
+        '#total_views_day2' => 0232,
+        '#name2' => 1230,
+        '#time_last_process2' => 20,
+    ];
+
+    $variables['test'] = $test_node;
+    $variables['#test123'] = 'Hieupro';
+//    dump($variables['#test123']);
+//
+//    dump($variables['#cache']);
+//    dump($variables);
+//    dump($variables['content']);
+//    dump($variables['content']['field_image']);
+//
+//    dump($variables['content']['field_image']['#theme']);
+
+}
+
+

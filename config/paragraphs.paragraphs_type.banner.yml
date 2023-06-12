@@ -1,0 +1,10 @@
+uuid: 21aad5d4-345d-4b2e-8eba-b5c8ddaf3000
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: Banner
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,4 @@
+services:
+  pfizer_question.render_pdf:
+    class: Drupal\pfizer_question\Controller\PfizerQuestionController
+    arguments: [ '@printable.format_plugin_manager' ]

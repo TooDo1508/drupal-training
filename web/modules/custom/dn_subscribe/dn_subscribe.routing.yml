@@ -1,0 +1,7 @@
+dn_subscribe.subscribe_form:
+  path: '/subscribe-form'
+  defaults:
+    _form: '\Drupal\dn_subscribe\Form\SubscribeForm'
+    _title: 'Subscribe form'
+  requirements:
+    _permission: 'TRUE'

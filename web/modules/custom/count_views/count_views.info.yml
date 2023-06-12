@@ -1,0 +1,5 @@
+name: Count Views Node
+type: module
+description: 'Count Views Node'
+package: Custom
+core_version_requirement: ^8 || ^9

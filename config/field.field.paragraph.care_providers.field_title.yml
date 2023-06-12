@@ -1,0 +1,19 @@
+uuid: 916958e3-4d93-41dd-92d2-abc807acf1b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.care_providers
+id: paragraph.care_providers.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: care_providers
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

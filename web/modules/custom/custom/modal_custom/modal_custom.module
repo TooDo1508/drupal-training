@@ -1,0 +1,102 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\Component\Serialization\Json;
+
+
+
+
+function goto_step($goto_step, $pages, \Drupal\Core\Form\FormStateInterface $form_state){
+  // Convert associative array to index for easier manipulation.
+  $all_keys = array_keys($pages);
+  $goto_destination_page_index = array_search($goto_step, $all_keys);
+  if($goto_destination_page_index > 0){
+    // The backend pointer for page will add 1 so to go our page we must -1.
+    $form_state->set('current_page', $all_keys[$goto_destination_page_index-1]);
+    $form_state->setRebuild();
+  }
+  else{
+    // Something went wrong.
+  }
+}
+
+function modal_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+
+  $form['#submit'][] = 'custom_submit_function';
+
+  // dump($form);
+  // dump($form_id);
+  // dump($form_state->get('pages'));
+  // dump($form['progress']['#current_page']);
+
+  
+  if($form_id == 'webform_submission_example_accessibility_wizard_add_form'){
+    
+    // dump($form);
+    //popup link
+    $form['back'] = [
+      '#type' => 'link',
+      '#title' => t('Prefer not to answer'),
+      '#url' => Url::fromRoute('modal_custom.path_url_test'),
+      '#attributes' => [
+       'class' => ['use-ajax'],
+       'data-dialog-type' => 'modal',
+       'data-dialog-options' => Json::encode([
+         'width' => 700,
+       ])
+      ]
+    ];
+
+    $form['#submit'][] = 'custom_submit_function';
+    
+  }
+
+  if($form_id == 'modal_custom'){
+    $form['#submit'][] = 'custom_submit_function';
+     
+  }
+
+  // // 1. Get the private tempstore factory, inject this in your form, controller or service.
+  // $tempstore = \Drupal::service('tempstore.private');
+  // // Get the store collection. 
+  // $store = $tempstore->get('my_module_collection');
+  // // Set the key/value pair.
+  // $store->set('key_name', $value);
+
+
+  // // 2. Get the value somewhere else in the app.
+  // $tempstore = \Drupal::service('tempstore.private');
+  // // Get the store collection. 
+  // $store = $tempstore->get('my_module_collection');
+  // // Get the key/value pair.
+  // $value = $store->get('key_name');
+
+  // // Delete the entry. Not mandatory since the data will be removed after a week.
+  // $store->delete('key_name');
+
+}
+
+function custom_submit_function($form,\Drupal\Core\Form\FormStateInterface $form_state){
+//  dump($form_state);
+  // dump($form_state->getValues()['op']);
+  // dump($form_state->getUserInput()['op']);
+    
+  // if($form_state->getUserInput()['op'] == 'Continute'){
+
+  //   \Drupal::messenger()->addStatus(t('Successful messsssssssage.'));
+  // }
+
+}
+
+function redirect_submit(array $form, \Drupal\Core\Form\FormStateInterface $form_state){
+
+  \Drupal::messenger()->addStatus(t('Successful message.'));
+}
+
+
+function modal_custom_preprocess_node(&$variables){
+  // die('1');
+}

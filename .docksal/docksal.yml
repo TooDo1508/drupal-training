@@ -1,0 +1,24 @@
+version: "2.1"
+services:
+  pma:
+    hostname: pma
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD:-root}
+    labels:
+      - io.docksal.virtual-host=pma.${VIRTUAL_HOST}
+  solr:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: solr
+    hostname: solr
+    image: docksal/solr:latest
+    volumes:
+      - ${PROJECT_ROOT}/.docksal/etc/solr/conf:/var/lib/solr/conf:ro
+# MailHog
+  mail:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: mail

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function count_views_schema()
+{
+    $schema['history_process'] = array(
+        'description' => 'A table to store simple data',
+        'fields' => array(
+            'id' => array(
+                'description' => 'Holds the id value',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'nid' => array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '0',
+                'unsigned' => TRUE,
+            ),
+            'uid' => array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '0',
+                'unsigned' => TRUE,
+            ),
+            'name' => array(
+                'type' => 'varchar',
+                'not null' => TRUE,
+                'default' => '',
+                'length' => 50,
+            ),
+//            'current_date' => [
+//                'type' => 'int',
+//                'default' => '0',
+//                'not null' => TRUE,
+//            ],
+            'current_date' => [
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => TRUE,
+            ],
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

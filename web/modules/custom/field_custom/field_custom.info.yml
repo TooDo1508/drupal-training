@@ -1,0 +1,5 @@
+name: Field API
+type: module
+description: 'Field API'
+package: Custom
+core_version_requirement: ^8 || ^9

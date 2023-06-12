@@ -1,0 +1,5 @@
+notification_bar.admin_config:
+  title: Notification Bar
+  description: 'Configuration notify bar all pages.'
+  parent: system.admin_config_services
+  route_name: notification_bar.admin_config

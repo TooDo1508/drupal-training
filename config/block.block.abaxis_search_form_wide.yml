@@ -1,0 +1,23 @@
+uuid: 532f46cd-c542-4ba8-8e07-8fefa6f8b997
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - abaxis
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: abaxis_search_form_wide
+theme: abaxis
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

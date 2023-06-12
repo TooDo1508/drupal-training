@@ -1,0 +1,10 @@
+uuid: 251a054d-e7a9-4bd3-b9bf-0bb9a85cff96
+langcode: en
+status: true
+dependencies: {  }
+id: care_providers_item
+label: 'Care Providers Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

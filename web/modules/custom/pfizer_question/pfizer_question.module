@@ -1,0 +1,17 @@
+<?php
+
+
+
+function pfizer_question_alter_form(&$form, FormStateInterface $form_state, $form_id) {
+    
+}
+
+function pfizer_question_theme(){
+    return array(
+        'summary_question_td' => array(
+            'variables' => [
+                'items' =>array()
+            ]
+        )
+    );
+}

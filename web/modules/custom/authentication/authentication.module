@@ -1,0 +1,86 @@
+<?php
+
+
+use Drupal\Core\Url;
+
+function authentication_preprocess_node(&$variables)
+{
+    $variables['#attached']['library'][] = 'authentication/authentication_lib';
+
+
+}
+
+
+
+function authentication_node_view_alter(&$build)
+{
+    $views = $build;
+    // dump($build['field_authentication'][0]['#markup']);
+    // $build['#attached']['library'][] = 'authentication/authentication_lib';
+    $config = \Drupal::config('authentication.admin_config');
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if (isset($build['field_authentication'][0]['#markup'])) {
+        if (\Drupal::currentUser()->isAnonymous() && $config->get('authentication_options') == 'form_based' && $build['field_authentication'][0]['#markup'] == 'On') {
+
+            $arr = array(
+                '#entity_type' => 1,
+                '#bundle' => 1,
+                '#language' => 1,
+                '#view_mode' => 1,
+                '#node' => 1,
+                '#theme' => 1,
+            );
+            $build = array_intersect_key($build, $arr);
+
+            $current_path = \Drupal::service('path.current')->getPath();
+
+            $build['header'] = array(
+                '#markup' =>
+                    '<div class="auth-restricted-wrapper">
+                <div class="alk-authentication-text-top"></div>
+                <div class="login-wrapper">
+                <div class="login-content">
+                <div class="login-restricted">' . t("Restricted") . '</div>
+                <div class="login-icon"></div>
+                <div class="login-title">' . t("Professional area") . '</div>
+                <div class="login-button"><a href="#"><span>' . t('Yes, I am a healthcare professional') . '</span></a></div><br>
+                <div class="login-back"><a href="#"><span>' . t("Back to home page") . '</span></a></div>
+              </div>
+          </div>
+          <div class="alk-authentication-text-bottom"></div>
+        </div>');
+
+            $modal_form = \Drupal::formBuilder()->getForm('Drupal\user\Form\UserLoginForm');
+
+
+            $login_form['#prefix'] = '<div class="alk-authentication-form">';
+            $login_form['#suffix'] = '</div>';
+            $login_form['form'] = $modal_form;
+
+            $build['form_authentication'] = [
+                'login' => $login_form,
+            ];
+        }
+    }
+
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function authentication_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+    if ($form_id == 'user_login_form') {
+        $form['#submit'][] = 'mymodule_user_login_submit';
+    }
+}
+
+function mymodule_user_login_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+    if (!($node = \Drupal::routeMatch()->getParameter('node')) == NULL) {
+        $nid = $node->id();
+        $url = Url::fromRoute('entity.node.canonical', array('node' => $nid),);
+        $form_state->setRedirectUrl($url);
+    };
+}

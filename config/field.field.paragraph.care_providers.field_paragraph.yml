@@ -1,0 +1,37 @@
+uuid: 057788a5-c666-4914-be9b-a80ca5ac90b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.care_providers
+    - paragraphs.paragraphs_type.care_providers_item
+  module:
+    - entity_reference_revisions
+id: paragraph.care_providers.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: care_providers
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      care_providers_item: care_providers_item
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 3
+        enabled: false
+      care_providers:
+        weight: 4
+        enabled: false
+      care_providers_item:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

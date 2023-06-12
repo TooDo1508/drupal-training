@@ -1,0 +1,22 @@
+uuid: ddc136b5-b578-47a3-8aed-c2840b0a5d87
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - abaxis
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: abaxis_powered
+theme: abaxis
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 41efc606-1033-4d9b-a773-f71e398c96d1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - abaxis
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: abaxis_page_title
+theme: abaxis
+region: content_above
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

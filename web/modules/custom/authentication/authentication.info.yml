@@ -1,0 +1,7 @@
+name: Config Authentication
+type: module
+description: 'Config Authentication'
+package: Example
+version: VERSION
+configure: authentication.admin_config
+core_version_requirement: ^8 || ^9 || ^10

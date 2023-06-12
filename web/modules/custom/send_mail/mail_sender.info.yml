@@ -1,0 +1,5 @@
+name: Custom mail sender
+type: module
+description: 'Custom mail sender'
+package: Custom
+core_version_requirement: ^8 || ^9

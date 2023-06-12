@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the abaxis theme.
+ */
+
+function abaxis_preprocess_menu(&$variables,$hook) {
+   
+}
+
+
+
+function abaxis_preprocess_links(&$variables){
+
+}
+
+function abaxis_preprocess_views_view(&$variables) {
+
+}

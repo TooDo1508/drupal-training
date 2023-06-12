@@ -1,0 +1,7 @@
+random_quote.path_quote_form:
+  path: '/quote_form'
+  defaults:
+    _form: '\Drupal\random_quote\Form\QuoteForm'
+    _title: 'Add new Quote'
+  requirements:
+    _permission: 'access content'

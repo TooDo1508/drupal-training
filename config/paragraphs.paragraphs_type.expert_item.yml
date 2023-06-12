@@ -1,0 +1,10 @@
+uuid: a6dafd31-7b1d-47b0-ab39-536602244cc9
+langcode: en
+status: true
+dependencies: {  }
+id: expert_item
+label: 'Expert Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

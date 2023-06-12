@@ -1,0 +1,39 @@
+pfizer_question.summary:
+  path: '/summary_question'
+  defaults:
+    _controller: '\Drupal\pfizer_question\Controller\PfizerQuestionController::myPage'
+    _title: 'Congratulations!'
+  requirements:
+    _permission: 'access content'
+
+pfizer_question.subscribe_form:
+  path: '/pfizer_question_form'
+  defaults:
+    _form: '\Drupal\pfizer_question\Form\QuestionForm'
+    _title: 'Question form'
+  requirements:
+    _permission: 'TRUE'
+
+topic_forms.path:
+  path: '/topics_form'
+  defaults:
+    _form: '\Drupal\pfizer_question\Form\TopicsForm'
+    _title: 'Topics Form:'
+  requirements:
+     _permission: 'TRUE'
+
+send_mail_form.path:
+  path: '/send_mail_form'
+  defaults:
+      _form: '\Drupal\pfizer_question\Form\SendMailForm'
+      _title: 'Send Mail Form:'
+  requirements:
+    _permission: 'TRUE'
+
+pfizer_question.summary_pdf:
+  path: '/summary_question/pdf'
+  defaults:
+    _controller: '\Drupal\pfizer_question\Controller\PfizerQuestionController::toPdf'
+    _title: 'Congratulations!'
+  requirements:
+    _permission: 'access content'

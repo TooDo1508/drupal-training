@@ -1,0 +1,41 @@
+uuid: 41073e9d-0444-4c68-837e-6ec5c7c737e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.avc.field_body
+    - field.field.paragraph.avc.field_media
+    - field.field.paragraph.avc.field_title
+    - paragraphs.paragraphs_type.avc
+  module:
+    - text
+id: paragraph.avc.default
+targetEntityType: paragraph
+bundle: avc
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

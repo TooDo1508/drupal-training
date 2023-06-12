@@ -1,0 +1,5 @@
+name: Modal Custom
+type: module
+package: Custom
+description: 'Create form to popup'
+core_version_requirement: ^8 || ^9

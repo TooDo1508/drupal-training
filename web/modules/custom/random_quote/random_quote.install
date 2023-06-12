@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function random_quote_schema()
+{
+    $schema['quote_process'] = array(
+        'description' => 'A table to store simple data',
+        'fields' => array(
+            'id' => array(
+                'description' => 'Holds the id value',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'author' => array(
+                'type' => 'varchar',
+                'default' => '',
+                'not null' => TRUE,
+                'length' => 55,
+            ),
+            'content' => array(
+                'type' => 'varchar',
+                'default' => '',
+                'not null' => TRUE,
+                'length' => 255,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

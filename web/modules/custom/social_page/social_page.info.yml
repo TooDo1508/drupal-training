@@ -1,0 +1,5 @@
+name: Social Page
+type: module
+description: 'Social Page'
+package: Custom
+core_version_requirement: ^8 || ^9

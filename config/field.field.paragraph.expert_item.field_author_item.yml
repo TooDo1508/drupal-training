@@ -1,0 +1,19 @@
+uuid: 88644132-2353-492c-a7e7-2e0e1434643e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_author_item
+    - paragraphs.paragraphs_type.expert_item
+id: paragraph.expert_item.field_author_item
+field_name: field_author_item
+entity_type: paragraph
+bundle: expert_item
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

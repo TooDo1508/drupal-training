@@ -1,0 +1,4 @@
+services:
+  random_quote.service_quote:
+    class: Drupal\random_quote\RandomQuote
+    arguments: ['@config.factory']

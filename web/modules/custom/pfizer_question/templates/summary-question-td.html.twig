@@ -1,0 +1,31 @@
+{# /** #}
+{# * @file #}
+{# * #}
+{# * @ingroup themeable #}
+{# */ #}
+
+<div>
+    {% for item in items %}
+        <h3><p>You’ve completed the you, Me + UC questionnaire. You’ll find a summary of your responses below.</p></h3>
+        <h4>Your Summary</h4>
+        <p>This is your You, Me + UC Questionnaire summary. You can use your answers to help guide your next
+            conversation with your doctor about your ulcerative colitis.
+            When reviewing your answers, think about additional information that may be helpful to bring up with your
+            doctor to help you have a productive conversation. You may use this summary page to write down any
+            additional thoughts.
+            We hope that these questions help you feel more prepared to
+            articipate in shared decision-making with your doctor.</p>
+        <h4>Your Physical Wellbeing:</h4>
+        <p>1. Do you think you’re currently flaring?</p>
+        {{ item.question_1 }}
+
+        <p>2. How often do you have blood in your stool?</p>
+        {{ item.question_2 }}
+
+        <p>3. Have you had any new UC symptoms within the past 2 weeks?</p>
+        {{ item.question_3 }}
+        <p>3a. What are the new symptoms?</p>
+        {{ item.question_3a }}
+
+    {% endfor %}
+</div>

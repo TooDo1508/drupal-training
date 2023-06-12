@@ -1,0 +1,9 @@
+article_update.article_update_custom:
+  path: '/article_update'
+  defaults:
+    _form: '\Drupal\article_update\Form\ArticleUpdate'
+    _title: 'Update entity Article'
+  requirements:
+    _permission: 'access content'
+
+

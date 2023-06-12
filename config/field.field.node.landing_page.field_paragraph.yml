@@ -1,0 +1,52 @@
+uuid: 2bdcea0a-a0a0-42c1-a1b8-c9faaeab2aaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.avc
+    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.care_providers
+    - paragraphs.paragraphs_type.experts
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_paragraph
+field_name: field_paragraph
+entity_type: node
+bundle: landing_page
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      banner: banner
+      care_providers: care_providers
+      avc: avc
+      experts: experts
+    negate: 0
+    target_bundles_drag_drop:
+      avc:
+        weight: 7
+        enabled: true
+      banner:
+        weight: 2
+        enabled: true
+      care_providers:
+        weight: 4
+        enabled: true
+      care_providers_item:
+        weight: 7
+        enabled: false
+      expert_item:
+        weight: 12
+        enabled: false
+      experts:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

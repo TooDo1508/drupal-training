@@ -1,0 +1,22 @@
+uuid: ad2f6fd2-0c0a-453b-9f65-99783d22fdee
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - abaxis
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: abaxis_help
+theme: abaxis
+region: content_above
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

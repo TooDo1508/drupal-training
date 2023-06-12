@@ -1,0 +1,37 @@
+uuid: c2a11a03-6e50-46b6-9f17-215f1f0ba579
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_list
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - abaxis
+id: views_block__article_list_article_tag
+theme: abaxis
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:article_list-article_tag'
+settings:
+  id: 'views_block:article_list-article_tag'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/node/*'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

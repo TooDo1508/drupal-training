@@ -1,0 +1,6 @@
+authentication_lib:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/authentica.js: {}

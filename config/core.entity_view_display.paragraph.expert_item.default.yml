@@ -1,0 +1,50 @@
+uuid: 18a087d2-ee66-4e21-b5d1-8426b01f226b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expert_item.field_author_item
+    - field.field.paragraph.expert_item.field_body
+    - field.field.paragraph.expert_item.field_description_item
+    - field.field.paragraph.expert_item.field_media
+    - paragraphs.paragraphs_type.expert_item
+  module:
+    - text
+id: paragraph.expert_item.default
+targetEntityType: paragraph
+bundle: expert_item
+mode: default
+content:
+  field_author_item:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_description_item:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

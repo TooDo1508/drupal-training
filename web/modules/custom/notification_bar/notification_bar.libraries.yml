@@ -1,0 +1,7 @@
+notification_bar:
+ css:
+    theme:
+        css/style.css: {}
+ js:
+   js/jquery_colopicker.js: {}
+  

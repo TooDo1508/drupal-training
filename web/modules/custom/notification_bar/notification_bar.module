@@ -1,0 +1,32 @@
+<?php
+
+function notification_bar_theme(){
+        return array(
+        'notification_bar' => array(
+            'variables' => [
+                'notification_message' => "",
+                'bbs_bgcolor' => "",
+                'bbs_notification_font_color' => ""
+            ],
+        )
+    );
+}
+
+function notification_bar_page_top(array &$page_top) {
+
+    $bbs_allow = \Drupal::config('notification_bar.admin_config')->get('notification_message_allowed');
+    if($bbs_allow == 1 && !(\Drupal::service('router.admin_context')->isAdminRoute())){
+        $bbs_message = \Drupal::config('notification_bar.admin_config')->get('notification_message');
+        $bbs_bgcolor = \Drupal::config('notification_bar.admin_config')->get('bbs_bgcolor');
+        $bbs_fontcolor = \Drupal::config('notification_bar.admin_config')->get('bbs_notification_font_color');
+        $page_top['notification_bar_page'] = [
+            '#theme' => 'notification_bar',
+            '#notification_message' => $bbs_message,
+            '#bbs_bgcolor' => $bbs_bgcolor,
+            '#bbs_notification_font_color' => $bbs_fontcolor,
+        ];
+    }
+
+
+}
+

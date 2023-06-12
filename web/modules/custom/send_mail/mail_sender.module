@@ -1,0 +1,56 @@
+<?php
+// function mail_sender_entity_insert(\Drupal\Core\Entity\EntityInterface $entity)
+// {
+//     \Drupal::messenger()->addStatus(t('Create ok with insert'));
+// }
+
+//function mail_sender_entity_create(\Drupal\Core\Entity\EntityInterface $entity)
+//{
+//    \Drupal::messenger()->addStatus(t('Create ok with create'));
+//}
+
+// function mail_sender_preprocess_node(&$variables)
+// {
+// }
+
+
+// function mail_sender_entity_update(\Drupal\Core\Entity\EntityInterface $entity)
+// {
+//     \Drupal::messenger()->addStatus(t('Update ok'));
+
+// //    if ($entity->getEntityTypeId() !== 'node' || ($entity->getEntityTypeId() === 'node' && $entity->bundle() !== 'article')) {
+// //        return;
+// //    }
+
+//     $mailManager = \Drupal::service('plugin.manager.mail');
+//     $module = 'mail_sender';
+//     $key = 'create_article';
+//     $to = \Drupal::currentUser()->getEmail();
+// //    $params['message'] = $entity->get('body')->value;
+//     $params['node_title'] = $entity->label();
+//     $langcode = \Drupal::currentUser()->getPreferredLangcode();
+//     $send = true;
+
+//     $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+//     if ($result['result'] !== true) {
+//         \Drupal::messenger()->addStatus(t('Send false'));
+//     } else {
+//         \Drupal::messenger()->addStatus(t('Send mail success'));
+//     }
+// }
+
+
+// function mail_sender_mail($key, &$message, $params)
+// {
+//     $options = array(
+//         'langcode' => $message['langcode'],
+//     );
+//     switch ($key) {
+//         case 'create_article':
+//             $message['from'] = \Drupal::config('system.site')->get('mail');
+//             $message['subject'] = t('New Article have been update: @title', array('@title' => $params['node_title']), $options);
+// //            $message['body'][] = $params['message'];
+//             $message['body'][] = 'Update oke he';
+//             break;
+//     }
+// }

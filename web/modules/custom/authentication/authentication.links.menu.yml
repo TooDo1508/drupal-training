@@ -1,0 +1,5 @@
+authentication.admin_config:
+  title: Config Authentication
+  description: 'Configuration notify bar all pages.'
+  parent: system.admin_config_services
+  route_name: authentication.admin_config

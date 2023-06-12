@@ -1,0 +1,15 @@
+<?php
+
+
+
+
+function social_page_theme()
+{
+    return array(
+        'render_social' => array(
+            'variables' => [
+                'items' => array()
+            ]
+        )
+    );
+}

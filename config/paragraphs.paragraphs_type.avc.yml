@@ -1,0 +1,10 @@
+uuid: 73c59011-d258-4d61-a9c1-bf2ff6a73217
+langcode: en
+status: true
+dependencies: {  }
+id: avc
+label: AVC
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

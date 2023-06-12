@@ -1,0 +1,20 @@
+uuid: adbc5699-df44-4c77-9253-c559ff4e6852
+langcode: en
+status: true
+dependencies:
+  theme:
+    - abaxis
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: abaxis_primary_admin_actions
+theme: abaxis
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

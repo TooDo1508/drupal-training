@@ -1,0 +1,7 @@
+modal_custom.path_url_test:
+  path: '/modal_custom'
+  defaults:
+    _form: '\Drupal\modal_custom\Form\ModalCustom'
+    _title: 'Just checking'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,30 @@
+uuid: e4cc20c5-ce6d-4d80-9747-19e302726f79
+langcode: en
+status: true
+dependencies:
+  module:
+    - count_views
+    - node
+  theme:
+    - abaxis
+id: countviews
+theme: abaxis
+region: content
+weight: 0
+provider: null
+plugin: count_views
+settings:
+  id: count_views
+  label: 'Count Views'
+  label_display: visible
+  provider: count_views
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      landing_page: landing_page
+      page: page

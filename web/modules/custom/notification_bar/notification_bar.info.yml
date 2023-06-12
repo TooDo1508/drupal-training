@@ -1,0 +1,7 @@
+name: Notification Bar
+type: module
+description: 'Notification Bar'
+package: Example
+version: VERSION
+configure: notification_bar.admin_config
+core_version_requirement: ^8 || ^9 || ^10

@@ -1,0 +1,7 @@
+article_form_update.article_form_update_custom:
+  path: '/update_article'
+  defaults:
+    _form: '\Drupal\article_form_update\Form\FormUpdateArtcle'
+    _title: 'My First Page and Menu Item'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,4 @@
+article_form_update_permission:
+  title: 'Access the secret notes'
+  description: 'Access the secret notes when editing or creating nodes.'
+  restrict access: true

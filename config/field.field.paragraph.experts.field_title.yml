@@ -1,0 +1,19 @@
+uuid: 6c1451db-3456-4f25-9965-c40044b86ec6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.experts
+id: paragraph.experts.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: experts
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
